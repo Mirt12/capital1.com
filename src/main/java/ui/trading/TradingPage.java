@@ -15,6 +15,9 @@ public class TradingPage {
     private String createAccountBtnLocator = "//button[@data-type='background_banner_block_btn1_signup']";
     private String tryDemoAccountBtnLocator = "//button[@data-type='background_banner_block_btn2_demo']";
     private String rejectCookieBtnLocator = "//button[@id='onetrust-reject-all-handler']";
+    public static final String pageHeaderLocator ="//h2[text()='Key differences']";
+    public static final String expectedHeaderText = "Key differences";
+
 
 
     public TradingPage() {
