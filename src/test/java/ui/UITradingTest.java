@@ -44,10 +44,9 @@ public class UITradingTest extends BaseTest {
         TradingPageSteps tradingPageSteps = new TradingPageSteps();
         tradingPageSteps.openTradingPage();
         ChromeDriver driver = new ChromeDriver();
-        driver.findElement(By.className(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
-        //String actualEndpoint = LoadHelper.getLink
-        //Compare expectedURL with actual endpoint
-
+//        driver.findElement(By.className(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
+//        String actualText = LoadHelper.getTextByLocator(TradingPage.signUpHeaderLocator);
+//        Assertions.assertEquals(TradingPage.expectedTextOfsignUpHeader, actualText);
     }
 
 

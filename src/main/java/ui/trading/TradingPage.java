@@ -19,11 +19,11 @@ public class TradingPage {
     public static final String expectedHeaderText = "Key differences";
     public static final String waysToTradeHeaderLocator ="//h1[text()='Ways to trade']";
     public static final String expectedWaysToTradeHeaderText = "Ways to trade";
-
     public static final String createAccountBtnLocatorOfWaysToTradeBanner ="//button[text()='Create account']";
     public static final String expectedTextOfCreateAccountBannerBtnLocator = "Create account";
 
-
+    public static final String signUpHeaderLocator ="//span[text()='Sign up']";
+    public static final String expectedTextOfsignUpHeader = "Sign up";
 
 
     public TradingPage() {
