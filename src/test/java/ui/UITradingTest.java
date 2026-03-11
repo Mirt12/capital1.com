@@ -3,21 +3,14 @@ package ui;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 import ui.basetests.BaseTest;
 import ui.steps.TradingPageSteps;
 import ui.trading.TradingPage;
 import ui.utils.LoadHelper;
 
 import java.io.UnsupportedEncodingException;
-import java.time.Duration;
-import java.util.function.Function;
 
 public class UITradingTest extends BaseTest {
 
@@ -27,6 +20,34 @@ public class UITradingTest extends BaseTest {
         tradingPageSteps.openTradingPage();
         String actualText = LoadHelper.getTextByLocator(TradingPage.pageHeaderLocator);
         Assertions.assertEquals(TradingPage.expectedHeaderText, actualText);
+    }
+
+    @Test
+    public void userSeesWaysToTradeBanner() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps tradingPageSteps = new TradingPageSteps();
+        tradingPageSteps.openTradingPage();
+        String actualText = LoadHelper.getTextByLocator(TradingPage.waysToTradeHeaderLocator);
+        Assertions.assertEquals(TradingPage.expectedWaysToTradeHeaderText, actualText);
+    }
+
+    @Test
+    public void userSeesCreateAccountBtnOnWaysTradeBanner() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps tradingPageSteps = new TradingPageSteps();
+        tradingPageSteps.openTradingPage();
+        String actualText = LoadHelper.getTextByLocator(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner);
+        Assertions.assertEquals(TradingPage.expectedTextOfCreateAccountBannerBtnLocator, actualText);
+
+    }
+
+    @Test
+    public void createAccountBtnOnWaysTradeBannerWorks() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps tradingPageSteps = new TradingPageSteps();
+        tradingPageSteps.openTradingPage();
+        ChromeDriver driver = new ChromeDriver();
+        driver.findElement(By.className(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
+        //String actualEndpoint = LoadHelper.getLink
+        //Compare expectedURL with actual endpoint
+
     }
 
 

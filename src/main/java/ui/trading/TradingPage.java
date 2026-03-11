@@ -17,6 +17,12 @@ public class TradingPage {
     private String rejectCookieBtnLocator = "//button[@id='onetrust-reject-all-handler']";
     public static final String pageHeaderLocator ="//h2[text()='Key differences']";
     public static final String expectedHeaderText = "Key differences";
+    public static final String waysToTradeHeaderLocator ="//h1[text()='Ways to trade']";
+    public static final String expectedWaysToTradeHeaderText = "Ways to trade";
+
+    public static final String createAccountBtnLocatorOfWaysToTradeBanner ="//button[text()='Create account']";
+    public static final String expectedTextOfCreateAccountBannerBtnLocator = "Create account";
+
 
 
 
