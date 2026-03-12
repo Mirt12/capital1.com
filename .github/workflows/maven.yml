@@ -2,6 +2,11 @@ name: Run tests and publish report
 on: [push]
 
 jobs:
+  permissions:
+    contents: write
+    pages: write
+    id-token: write
+    
   test:
     runs-on: ubuntu-latest
     steps:
