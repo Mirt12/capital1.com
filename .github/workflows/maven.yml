@@ -9,11 +9,12 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: zulu
-          java-version: 18
+          distribution: 'zulu'
+          java-version: '18'
+          cache: 'maven' # Ускорит сборку, кешируя зависимости
 
       - name: Run tests
-        run: ./gradlew clean test
+        run: mvn clean test # Заменили gradlew на mvn
 
       - name: Load test report history
         uses: actions/checkout@v3
@@ -29,7 +30,7 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_history: allure-history
-          allure_results: build/allure-results
+          allure_results: target/allure-results # Заменили build/ на target/
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
