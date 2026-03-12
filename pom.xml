@@ -15,6 +15,7 @@
         <jupiter.version>5.8.2</jupiter.version>
         <aspectj.version>1.9.21</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
     </properties>
 
     <dependencyManagement>

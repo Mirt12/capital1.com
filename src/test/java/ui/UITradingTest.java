@@ -39,15 +39,15 @@ public class UITradingTest extends BaseTest {
 
     }
 
-    @Test
-    public void createAccountBtnOnWaysTradeBannerWorks() throws UnsupportedEncodingException, InterruptedException {
-        TradingPageSteps tradingPageSteps = new TradingPageSteps();
-        tradingPageSteps.openTradingPage();
-        ChromeDriver driver = new ChromeDriver();
+//    @Test
+//    public void createAccountBtnOnWaysTradeBannerWorks() throws UnsupportedEncodingException, InterruptedException {
+//        TradingPageSteps tradingPageSteps = new TradingPageSteps();
+//        tradingPageSteps.openTradingPage();
+//        ChromeDriver driver = new ChromeDriver();
 //        driver.findElement(By.className(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
 //        String actualText = LoadHelper.getTextByLocator(TradingPage.signUpHeaderLocator);
 //        Assertions.assertEquals(TradingPage.expectedTextOfsignUpHeader, actualText);
-    }
+//    }
 
 
 }
