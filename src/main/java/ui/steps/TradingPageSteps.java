@@ -8,7 +8,7 @@ import ui.utils.LoadHelper;
 
 public class TradingPageSteps {
 
-    WebDriver driver;
+    public WebDriver driver;
 
     public TradingPageSteps() {
         this.driver = DriverSingleton.getDriver();
@@ -20,6 +20,4 @@ public class TradingPageSteps {
         page.getTradingURL()
                 .closeCookieModal(wait);
     }
-
-
 }
