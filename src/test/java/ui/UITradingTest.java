@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ui.basetests.BaseTest;
+import ui.steps.AutorizedSteps;
 import ui.steps.TradingPageSteps;
 import ui.trading.TradingPage;
 import ui.utils.LoadHelper;
@@ -47,5 +48,15 @@ public class UITradingTest extends BaseTest {
         String actualText = LoadHelper.getTextByLocator(TradingPage.signUpHeaderLocator);
         Assertions.assertEquals(TradingPage.expectedTextOfsignUpHeader, actualText);
     }
+
+    @Test
+    public void userCanLogin() throws UnsupportedEncodingException, InterruptedException {
+        AutorizedSteps steps= new AutorizedSteps();
+        steps.fillLoginFormAndSubmit("tbalashevich@bk.ru", "PostinG@2579!");
+        String actualText = LoadHelper.getTextByLocator(TradingPage.loginGreetingsLocator);
+        Assertions.assertEquals(TradingPage.loginGreetingsText, actualText);
+    }
+
+
 
 }
