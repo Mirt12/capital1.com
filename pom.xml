@@ -53,17 +53,10 @@
             <version>${jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
-            <scope>test</scope>
-        </dependency>
-<!--        &lt;!&ndash; Source: https://mvnrepository.com/artifact/io.qameta.allure/allure-spock2 &ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>io.qameta.allure</groupId>-->
-<!--            <artifactId>allure-spock2</artifactId>-->
-<!--            <version>2.33.0</version>-->
-<!--            <scope>compile</scope>-->
+<!--            <artifactId>allure-junit5</artifactId>-->
+<!--            <scope>test</scope>-->
 <!--        </dependency>-->
         <dependency>
             <groupId>org.slf4j</groupId>

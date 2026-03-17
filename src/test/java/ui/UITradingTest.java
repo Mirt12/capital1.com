@@ -3,8 +3,6 @@ package ui;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import ui.basetests.BaseTest;
 import ui.steps.AutorizedSteps;
 import ui.steps.TradingPageSteps;
@@ -50,13 +48,23 @@ public class UITradingTest extends BaseTest {
     }
 
     @Test
-    public void userCanLogin() throws UnsupportedEncodingException, InterruptedException {
-        AutorizedSteps steps= new AutorizedSteps();
+    public void userCanLoginFromHomePage() throws UnsupportedEncodingException, InterruptedException {
+        AutorizedSteps steps = new AutorizedSteps();
         steps.fillLoginFormAndSubmit("tbalashevich@bk.ru", "PostinG@2579!");
         String actualText = LoadHelper.getTextByLocator(TradingPage.loginGreetingsLocator);
         Assertions.assertEquals(TradingPage.loginGreetingsText, actualText);
     }
 
+    @Test
+    public void createAccountBtnOnWaysTradeBannerWorksForAuthorizedUser() throws UnsupportedEncodingException, InterruptedException {
+        AutorizedSteps steps = new AutorizedSteps();
+        steps.authorizedUserGoesToTradingPage("tbalashevich@bk.ru", "PostinG@2579!");
+        TradingPageSteps tradingPageSteps = new TradingPageSteps();
+        tradingPageSteps.driver.findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
+        String actualText = LoadHelper.getTextByLocator(TradingPage.loginGreetingsLocator);
+        //to close lang.modal
+        Assertions.assertEquals(TradingPage.loginGreetingsText, actualText);
+    }
 
 
 }

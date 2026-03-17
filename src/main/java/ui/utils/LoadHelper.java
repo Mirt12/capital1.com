@@ -21,7 +21,7 @@ public class LoadHelper {
         return fluentWait;
     }
 
-    public static String getTextByLocator(String locator) {
+    public static String getTextByLocator(final String locator) {
         Wait<WebDriver> wait = LoadHelper.wait30seconds();
         WebElement actualTextElement = (WebElement) wait.until(new Function<WebDriver, WebElement>() {
             public WebElement apply(WebDriver driver) {

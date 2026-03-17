@@ -9,7 +9,9 @@ import ui.utils.LoadHelper;
 public class AutorizedSteps {
     public WebDriver driver;
 
-    public AutorizedSteps() { this.driver = DriverSingleton.getDriver(); }
+    public AutorizedSteps() {
+        this.driver = DriverSingleton.getDriver();
+    }
 
     public void fillLoginFormAndSubmit(String email, String password) {
         TradingPage page = new TradingPage();
@@ -21,4 +23,18 @@ public class AutorizedSteps {
                 .fillInputFieldPassword(password)
                 .clickSubmitButtonOfLoginForm();
     }
+
+    public void authorizedUserGoesToTradingPage(String email, String password) {
+        TradingPage page = new TradingPage();
+        Wait<WebDriver> wait = LoadHelper.wait30seconds();
+        page.getBaseURL()
+                .closeCookieModal(wait)
+                .clickAuthorizationLink(wait)
+                .fillInputFieldEmail(wait, email)
+                .fillInputFieldPassword(password)
+                .clickSubmitButtonOfLoginForm()
+                .clickLogo()
+                .clickTradingLink(wait);
+    }
+
 }

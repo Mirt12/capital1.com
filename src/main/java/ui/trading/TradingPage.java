@@ -11,7 +11,7 @@ import ui.utils.LoadHelper;
 import java.util.function.Function;
 
 public class TradingPage {
-    private WebDriver driver;
+    public WebDriver driver;
     private String baseUrl = "https://capital.com";
     private String tradingUrlEn = "https://capital.com/en-eu/ways-to-trade";
     private String createAccountBtnLocator = "//button[@data-type='background_banner_block_btn1_signup']";
@@ -31,6 +31,8 @@ public class TradingPage {
     public static final String submitLoginBtnLocator = "//button[@type='submit']";
     public static final String loginGreetingsLocator = "//trade-topbar//div[@class=\"col market\"]";
     public static final String loginGreetingsText = "Market";
+    public static final String capitalLogoLocator = "//a[@class='logo direction-ltr logo--capital']";
+    public static final String tradingLinkLocator = "//a[@class='js-analyticsClick AMZV' and contains(text(),'Trading')]";
 
 
     public TradingPage() {
@@ -89,7 +91,25 @@ public class TradingPage {
         return this;
     }
 
+    public TradingPage clickLogo() {
+        WebElement logoLink = driver.findElement(By.xpath(capitalLogoLocator));
+        logoLink.click();
+        return this;
+    }
+
+    public TradingPage clickTradingLink(Wait wait) {
+        WebElement tradingLink = (WebElement) wait.until(new Function<WebDriver, WebElement>() {
+            public WebElement apply(WebDriver driver) {
+                return driver.findElement(By.xpath(tradingLinkLocator));
+            }
+        });
+        tradingLink.click();
+        return this;
+    }
+
 }
+
+
 
 
 
