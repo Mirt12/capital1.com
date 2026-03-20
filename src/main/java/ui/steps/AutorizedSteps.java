@@ -15,7 +15,7 @@ public class AutorizedSteps {
 
     public void fillLoginFormAndSubmit(String email, String password) {
         TradingPage page = new TradingPage();
-        Wait<WebDriver> wait = LoadHelper.wait30seconds();
+        Wait<WebDriver> wait = LoadHelper.wait10seconds();
         page.getBaseURL()
                 .closeCookieModal(wait)
                 .clickAuthorizationLink(wait)
@@ -24,17 +24,18 @@ public class AutorizedSteps {
                 .clickSubmitButtonOfLoginForm();
     }
 
-    public void authorizedUserGoesToTradingPage(String email, String password) {
+    public void authorizedUserOpensLogo(String email, String password) {
         TradingPage page = new TradingPage();
-        Wait<WebDriver> wait = LoadHelper.wait30seconds();
+        Wait<WebDriver> wait = LoadHelper.wait10seconds();
         page.getBaseURL()
                 .closeCookieModal(wait)
+                .closeLocationModal(wait)
                 .clickAuthorizationLink(wait)
                 .fillInputFieldEmail(wait, email)
                 .fillInputFieldPassword(password)
                 .clickSubmitButtonOfLoginForm()
-                .clickLogo()
-                .clickTradingLink(wait);
+                .clickLogo(wait);
+                //navigation to new browser window (??)
     }
 
 }

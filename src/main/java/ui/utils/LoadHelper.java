@@ -12,17 +12,17 @@ import java.time.Duration;
 import java.util.function.Function;
 
 public class LoadHelper {
-    public static Wait<WebDriver> wait30seconds() {
+    public static Wait<WebDriver> wait10seconds() {
         WebDriver driver = DriverSingleton.getDriver();
         Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(30))
+                .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(NoSuchElementException.class);
         return fluentWait;
     }
 
     public static String getTextByLocator(final String locator) {
-        Wait<WebDriver> wait = LoadHelper.wait30seconds();
+        Wait<WebDriver> wait = LoadHelper.wait10seconds();
         WebElement actualTextElement = (WebElement) wait.until(new Function<WebDriver, WebElement>() {
             public WebElement apply(WebDriver driver) {
                 return driver.findElement(By.xpath(locator));

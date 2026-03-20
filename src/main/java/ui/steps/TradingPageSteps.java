@@ -16,7 +16,7 @@ public class TradingPageSteps {
 
     public void openTradingPage() {
         TradingPage page = new TradingPage();
-        Wait<WebDriver> wait = LoadHelper.wait30seconds();
+        Wait<WebDriver> wait = LoadHelper.wait10seconds();
         page.getTradingURL()
                 .closeCookieModal(wait);
     }

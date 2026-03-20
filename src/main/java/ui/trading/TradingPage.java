@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Wait;
 import ui.driver.DriverSingleton;
-import ui.utils.LoadHelper;
 
 import java.util.function.Function;
 
@@ -33,7 +32,7 @@ public class TradingPage {
     public static final String loginGreetingsText = "Market";
     public static final String capitalLogoLocator = "//a[@class='logo direction-ltr logo--capital']";
     public static final String tradingLinkLocator = "//a[@class='js-analyticsClick AMZV' and contains(text(),'Trading')]";
-
+    public static final String goToLocalSiteLBtnLocator = "//button[@data-type='wrong_location_apply']";
 
     public TradingPage() {
         this.driver = DriverSingleton.getDriver();
@@ -91,8 +90,12 @@ public class TradingPage {
         return this;
     }
 
-    public TradingPage clickLogo() {
-        WebElement logoLink = driver.findElement(By.xpath(capitalLogoLocator));
+    public TradingPage clickLogo(Wait wait) {
+        WebElement logoLink = (WebElement) wait.until(new Function<WebDriver, WebElement>() {
+            public WebElement apply(WebDriver driver) {
+                return driver.findElement(By.xpath(capitalLogoLocator));
+            }
+        });
         logoLink.click();
         return this;
     }
@@ -104,6 +107,17 @@ public class TradingPage {
             }
         });
         tradingLink.click();
+        return this;
+    }
+
+
+    public TradingPage closeLocationModal(Wait wait) {
+        WebElement btn = (WebElement) wait.until(new Function<WebDriver, WebElement>() {
+            public WebElement apply(WebDriver driver) {
+                return driver.findElement(By.xpath(goToLocalSiteLBtnLocator));
+            }
+        });
+        btn.click();
         return this;
     }
 

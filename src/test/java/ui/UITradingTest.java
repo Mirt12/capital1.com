@@ -58,13 +58,15 @@ public class UITradingTest extends BaseTest {
     @Test
     public void createAccountBtnOnWaysTradeBannerWorksForAuthorizedUser() throws UnsupportedEncodingException, InterruptedException {
         AutorizedSteps steps = new AutorizedSteps();
-        steps.authorizedUserGoesToTradingPage("tbalashevich@bk.ru", "PostinG@2579!");
+        steps.fillLoginFormAndSubmit("tbalashevich@bk.ru", "PostinG@2579!");
+        //opens unAutorized page (??)
         TradingPageSteps tradingPageSteps = new TradingPageSteps();
+        tradingPageSteps.openTradingPage();
         tradingPageSteps.driver.findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
         String actualText = LoadHelper.getTextByLocator(TradingPage.loginGreetingsLocator);
-        //to close lang.modal
         Assertions.assertEquals(TradingPage.loginGreetingsText, actualText);
     }
+
 
 
 }
