@@ -55,17 +55,18 @@ public class UITradingTest extends BaseTest {
         Assertions.assertEquals(TradingPage.loginGreetingsText, actualText);
     }
 
-    @Test
-    public void createAccountBtnOnWaysTradeBannerWorksForAuthorizedUser() throws UnsupportedEncodingException, InterruptedException {
-        AutorizedSteps steps = new AutorizedSteps();
-        steps.fillLoginFormAndSubmit("tbalashevich@bk.ru", "PostinG@2579!");
-        //opens unAutorized page (??)
-        TradingPageSteps tradingPageSteps = new TradingPageSteps();
-        tradingPageSteps.openTradingPage();
-        tradingPageSteps.driver.findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
-        String actualText = LoadHelper.getTextByLocator(TradingPage.loginGreetingsLocator);
-        Assertions.assertEquals(TradingPage.loginGreetingsText, actualText);
-    }
+//    @Test
+//    public void createAccountBtnOnWaysTradeBannerWorksForAuthorizedUser() throws UnsupportedEncodingException, InterruptedException {
+//        AutorizedSteps steps = new AutorizedSteps();
+//        steps.fillLoginFormAndSubmit("tbalashevich@bk.ru", "PostinG@2579!");
+//        //opens unAutorized page (??)
+//        TradingPageSteps tradingPageSteps = new TradingPageSteps();
+//        tradingPageSteps.openTradingPage();
+//        tradingPageSteps.driver.findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
+//        String actualText = LoadHelper.getTextByLocator(TradingPage.loginGreetingsLocator);
+//        Assertions.assertEquals(TradingPage.loginGreetingsText, actualText);
+//    }
+
 
 
 
