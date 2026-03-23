@@ -133,5 +133,15 @@ public class UITradingTest extends BaseTest {
         Assertions.assertEquals(TradingPage.expectedTextOfsignUpHeader, actualText);
     }
 
+    @Test
+    public void userSeesQrCodeOnMobileAppItem() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
+
+        //check of QR code on image and URL
+
+
+    }
+
 
 }
