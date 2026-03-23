@@ -33,6 +33,12 @@ public class TradingPage {
     public static final String goToLocalSiteLBtnLocator = "//button[@data-type='wrong_location_apply']";
     public static final String tryDemoAccountBtnLocator = "//button[@data-type='background_banner_block_btn2_demo']";
     public static final String expectedTextOfTryDemoAccountBtn = "Try demo account";
+    public static final String mobileAppMenuItemLocator = "//h2[@class='wdEe IeiA' and contains(text(),'Mobile app')]";
+    public static final String webPlatformMenuItemLocator = "//h2[@class='wdEe IeiA' and contains(text(),'Web platform')]";
+    public static final String expectedTextMobileApp = "Mobile app";
+    public static final String expectedTextWebPlatform = "Web platform";
+    public static final String learnMoreLinkOfWebPlatformMenuItemLocator = "//a[@data-type='cross_promo_block_btn1' and contains(text(),'Learn more')]";
+    public static final String expectedTextOfLearnMoreLinkOfWebPlatform = "Learn more";
 
 
     public TradingPage() {

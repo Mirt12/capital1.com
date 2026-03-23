@@ -83,6 +83,29 @@ public class UITradingTest extends BaseTest {
         Assertions.assertEquals(TradingPage.expectedTextOfsignUpHeader, actualText);
     }
 
+    @Test
+    public void userSeesMobileAppMenuItem() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
+        String actualHeader = LoadHelper.getTextByLocator(TradingPage.mobileAppMenuItemLocator);
+        Assertions.assertEquals(TradingPage.expectedTextMobileApp, actualHeader);
+    }
+
+    @Test
+    public void userSeesWebPlatformMenuItem() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
+        String actualHeader = LoadHelper.getTextByLocator(TradingPage.webPlatformMenuItemLocator);
+        Assertions.assertEquals(TradingPage.expectedTextWebPlatform, actualHeader);
+    }
+
+    @Test
+    public void userSeesLearnMoreLinkOFWebPlatformMenuItem() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
+        String actualHeader = LoadHelper.getTextByLocator(TradingPage.learnMoreLinkOfWebPlatformMenuItemLocator);
+        Assertions.assertEquals(TradingPage.expectedTextOfLearnMoreLinkOfWebPlatform, actualHeader);
+    }
 
 
 }

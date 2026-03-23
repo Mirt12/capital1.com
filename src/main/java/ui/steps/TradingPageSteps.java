@@ -20,5 +20,4 @@ public class TradingPageSteps {
         page.getTradingURL()
                 .closeCookieModal(wait);
     }
-
 }
