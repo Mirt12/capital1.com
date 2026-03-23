@@ -15,34 +15,33 @@ public class UITradingTest extends BaseTest {
 
     @Test
     public void userCanOpenTradingPage() throws UnsupportedEncodingException, InterruptedException {
-        TradingPageSteps tradingPageSteps = new TradingPageSteps();
-        tradingPageSteps.openTradingPage();
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
         String actualText = LoadHelper.getTextByLocator(TradingPage.pageHeaderLocator);
         Assertions.assertEquals(TradingPage.expectedHeaderText, actualText);
     }
 
     @Test
     public void userSeesWaysToTradeBanner() throws UnsupportedEncodingException, InterruptedException {
-        TradingPageSteps tradingPageSteps = new TradingPageSteps();
-        tradingPageSteps.openTradingPage();
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
         String actualText = LoadHelper.getTextByLocator(TradingPage.waysToTradeHeaderLocator);
         Assertions.assertEquals(TradingPage.expectedWaysToTradeHeaderText, actualText);
     }
 
     @Test
     public void userSeesCreateAccountBtnOnWaysTradeBanner() throws UnsupportedEncodingException, InterruptedException {
-        TradingPageSteps tradingPageSteps = new TradingPageSteps();
-        tradingPageSteps.openTradingPage();
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
         String actualText = LoadHelper.getTextByLocator(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner);
         Assertions.assertEquals(TradingPage.expectedTextOfCreateAccountBannerBtnLocator, actualText);
-
     }
 
     @Test
     public void createAccountBtnOnWaysTradeBannerWorks() throws UnsupportedEncodingException, InterruptedException {
-        TradingPageSteps tradingPageSteps = new TradingPageSteps();
-        tradingPageSteps.openTradingPage();
-        tradingPageSteps.driver.findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
+        steps.driver.findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
         String actualText = LoadHelper.getTextByLocator(TradingPage.signUpHeaderLocator);
         Assertions.assertEquals(TradingPage.expectedTextOfsignUpHeader, actualText);
     }
@@ -60,13 +59,29 @@ public class UITradingTest extends BaseTest {
 //        AutorizedSteps steps = new AutorizedSteps();
 //        steps.fillLoginFormAndSubmit("tbalashevich@bk.ru", "PostinG@2579!");
 //        //opens unAutorized page (??)
-//        TradingPageSteps tradingPageSteps = new TradingPageSteps();
-//        tradingPageSteps.openTradingPage();
-//        tradingPageSteps.driver.findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
+//        TradingPageSteps steps = new TradingPageSteps();
+//        steps.openTradingPage();
+//        steps.driver.findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
 //        String actualText = LoadHelper.getTextByLocator(TradingPage.loginGreetingsLocator);
 //        Assertions.assertEquals(TradingPage.loginGreetingsText, actualText);
 //    }
 
+    @Test
+    public void userSeesTryDemoAccountBtn() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
+        String actualBtnText = LoadHelper.getTextByLocator(TradingPage.tryDemoAccountBtnLocator);
+        Assertions.assertEquals(TradingPage.expectedTextOfTryDemoAccountBtn, actualBtnText);
+    }
+
+    @Test
+    public void tryDemoBtnWorks() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
+        steps.driver.findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
+        String actualText = LoadHelper.getTextByLocator(TradingPage.signUpHeaderLocator);
+        Assertions.assertEquals(TradingPage.expectedTextOfsignUpHeader, actualText);
+    }
 
 
 

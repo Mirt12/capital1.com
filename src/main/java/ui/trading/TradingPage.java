@@ -13,14 +13,12 @@ public class TradingPage {
     public WebDriver driver;
     private String baseUrl = "https://capital.com";
     private String tradingUrlEn = "https://capital.com/en-eu/ways-to-trade";
-    private String createAccountBtnLocator = "//button[@data-type='background_banner_block_btn1_signup']";
-    private String tryDemoAccountBtnLocator = "//button[@data-type='background_banner_block_btn2_demo']";
     private String rejectCookieBtnLocator = "//button[@id='onetrust-reject-all-handler']";
     public static final String pageHeaderLocator = "//h2[text()='Key differences']";
     public static final String expectedHeaderText = "Key differences";
     public static final String waysToTradeHeaderLocator = "//h1[text()='Ways to trade']";
     public static final String expectedWaysToTradeHeaderText = "Ways to trade";
-    public static final String createAccountBtnLocatorOfWaysToTradeBanner = "//button[text()='Create account']";
+    public static final String createAccountBtnLocatorOfWaysToTradeBanner = "//button[@data-type='background_banner_block_btn1_signup']";
     public static final String expectedTextOfCreateAccountBannerBtnLocator = "Create account";
     public static final String signUpHeaderLocator = "//span[text()='Sign up']";
     public static final String expectedTextOfsignUpHeader = "Sign up";
@@ -33,6 +31,9 @@ public class TradingPage {
     public static final String capitalLogoLocator = "//a[@class='logo direction-ltr logo--capital']";
     public static final String tradingLinkLocator = "//a[@class='js-analyticsClick AMZV' and contains(text(),'Trading')]";
     public static final String goToLocalSiteLBtnLocator = "//button[@data-type='wrong_location_apply']";
+    public static final String tryDemoAccountBtnLocator = "//button[@data-type='background_banner_block_btn2_demo']";
+    public static final String expectedTextOfTryDemoAccountBtn = "Try demo account";
+
 
     public TradingPage() {
         this.driver = DriverSingleton.getDriver();
@@ -115,6 +116,16 @@ public class TradingPage {
         WebElement btn = (WebElement) wait.until(new Function<WebDriver, WebElement>() {
             public WebElement apply(WebDriver driver) {
                 return driver.findElement(By.xpath(goToLocalSiteLBtnLocator));
+            }
+        });
+        btn.click();
+        return this;
+    }
+
+    public TradingPage clickTryDemoAccountBtn(Wait wait) {
+        WebElement btn = (WebElement) wait.until(new Function<WebDriver, WebElement>() {
+            public WebElement apply(WebDriver driver) {
+                return driver.findElement(By.xpath(tryDemoAccountBtnLocator));
             }
         });
         btn.click();
