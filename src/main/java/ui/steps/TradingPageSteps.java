@@ -20,4 +20,11 @@ public class TradingPageSteps {
         page.getTradingURL()
                 .closeCookieModal(wait);
     }
+
+    public void openWebPlatform() {
+        TradingPage page = new TradingPage();
+        Wait<WebDriver> wait = LoadHelper.wait10seconds();
+        page.getWebPlatformURL()
+                .closeCookieModal(wait);
+    }
 }

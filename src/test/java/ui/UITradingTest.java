@@ -34,7 +34,7 @@ public class UITradingTest extends BaseTest {
         TradingPageSteps steps = new TradingPageSteps();
         steps.openTradingPage();
         String actualText = LoadHelper.getTextByLocator(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner);
-        Assertions.assertEquals(TradingPage.expectedTextOfCreateAccountBannerBtnLocator, actualText);
+        Assertions.assertEquals(TradingPage.expectedTextOfCreateAccountBtn, actualText);
     }
 
     @Test
@@ -105,6 +105,32 @@ public class UITradingTest extends BaseTest {
         steps.openTradingPage();
         String actualHeader = LoadHelper.getTextByLocator(TradingPage.learnMoreLinkOfWebPlatformMenuItemLocator);
         Assertions.assertEquals(TradingPage.expectedTextOfLearnMoreLinkOfWebPlatform, actualHeader);
+    }
+
+    @Test
+    public void learnMoreLinkOFWebPlatformMenuItemWorks() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openTradingPage();
+        steps.driver.findElement(By.xpath(TradingPage.learnMoreLinkOfWebPlatformMenuItemLocator)).click();
+        String actualHeader = LoadHelper.getTextByLocator(TradingPage.headerOfWebPlaform);
+        Assertions.assertEquals(TradingPage.expectedHeaderOfWebPlatform, actualHeader);
+    }
+
+    @Test
+    public void userSeesCreateAccountBtnInWebPlatform() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openWebPlatform();
+        String actualText = LoadHelper.getTextByLocator(TradingPage.createAccountBtnOfWebPlatform);
+        Assertions.assertEquals(TradingPage.expectedTextOfCreateAccountBtn, actualText);
+    }
+
+    @Test
+    public void SeesCreateAccountBtnInWebPlatformWorks() throws UnsupportedEncodingException, InterruptedException {
+        TradingPageSteps steps = new TradingPageSteps();
+        steps.openWebPlatform();
+        steps.driver.findElement(By.xpath(TradingPage.createAccountBtnOfWebPlatform)).click();
+        String actualText = LoadHelper.getTextByLocator(TradingPage.signUpHeaderLocator);
+        Assertions.assertEquals(TradingPage.expectedTextOfsignUpHeader, actualText);
     }
 
 

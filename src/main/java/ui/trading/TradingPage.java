@@ -13,13 +13,14 @@ public class TradingPage {
     public WebDriver driver;
     private String baseUrl = "https://capital.com";
     private String tradingUrlEn = "https://capital.com/en-eu/ways-to-trade";
+    private String webPlatformUrl = "https://capital.com/en-eu/trading-platforms/web-platform";
     private String rejectCookieBtnLocator = "//button[@id='onetrust-reject-all-handler']";
     public static final String pageHeaderLocator = "//h2[text()='Key differences']";
     public static final String expectedHeaderText = "Key differences";
     public static final String waysToTradeHeaderLocator = "//h1[text()='Ways to trade']";
     public static final String expectedWaysToTradeHeaderText = "Ways to trade";
     public static final String createAccountBtnLocatorOfWaysToTradeBanner = "//button[@data-type='background_banner_block_btn1_signup']";
-    public static final String expectedTextOfCreateAccountBannerBtnLocator = "Create account";
+    public static final String expectedTextOfCreateAccountBtn = "Create account";
     public static final String signUpHeaderLocator = "//span[text()='Sign up']";
     public static final String expectedTextOfsignUpHeader = "Sign up";
     public static final String loginFormLocator = "//div [@class='EshS']//button[@data-type='btn_header_login']";
@@ -39,6 +40,10 @@ public class TradingPage {
     public static final String expectedTextWebPlatform = "Web platform";
     public static final String learnMoreLinkOfWebPlatformMenuItemLocator = "//a[@data-type='cross_promo_block_btn1' and contains(text(),'Learn more')]";
     public static final String expectedTextOfLearnMoreLinkOfWebPlatform = "Learn more";
+    public static final String headerOfWebPlaform = "//h1[@class='cQF3 IeiA' and contains(text(),'The Capital.com web trading platform')]";
+    public static final String expectedHeaderOfWebPlatform = "The Capital.com web trading platform";
+    public static final String createAccountBtnOfWebPlatform = "//button[@class='PjdC xTy3 Ontd lgv2 l_btn_signup js-analyticsClick tFug' and contains(text(),'Create account')]";
+
 
 
     public TradingPage() {
@@ -52,6 +57,11 @@ public class TradingPage {
 
     public TradingPage getTradingURL() {
         driver.get(tradingUrlEn);
+        return this;
+    }
+
+    public TradingPage getWebPlatformURL() {
+        driver.get(webPlatformUrl);
         return this;
     }
 
@@ -137,6 +147,7 @@ public class TradingPage {
         btn.click();
         return this;
     }
+
 
 }
 
