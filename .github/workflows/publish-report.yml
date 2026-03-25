@@ -37,8 +37,8 @@ jobs:
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
-          allure_results: "/target/allure-results"
-          allure_history: "/target/site/allure-maven-plugin/history"
+          allure_results: "://capital1.com"
+          allure_history: "allure-history"
           keep_reports: 20
 
       - name: Deploy report to Github Pages
