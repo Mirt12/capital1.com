@@ -14,6 +14,7 @@ public class DriverSingleton {
 
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage");
             options.addArguments("--disable-cache", "--incognito", "--remote-allow-origins=*");
             driver = new ChromeDriver(options);
             driver.manage().window().maximize();
