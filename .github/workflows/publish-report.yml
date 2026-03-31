@@ -22,6 +22,11 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
+
       - name: Run Tests
         run: mvn clean verify
         continue-on-error: true # важно: идем дальше, даже если тесты упали
