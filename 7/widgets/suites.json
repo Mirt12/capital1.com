@@ -1,1 +1,0 @@
-{"total":2,"items":[{"uid":"38e68b19dad8e474f8415ef605806ae3","name":"ui.UITradingTest","statistic":{"failed":7,"broken":5,"skipped":0,"passed":2,"unknown":0,"total":14}},{"uid":"db3f654fcbab08da3a779e6d0ecc8d7d","name":"rest.ApiLoginTest","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}}]}
