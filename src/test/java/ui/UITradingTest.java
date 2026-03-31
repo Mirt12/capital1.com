@@ -22,7 +22,8 @@ public class UITradingTest extends BaseTest {
         System.out.println("openTradingPage");
         String actualText = LoadHelper.getTextByLocator(TradingPage.pageHeaderLocator);
         System.out.println("getTextByLocator");
-        Assertions.assertEquals(TradingPage.expectedHeaderText, actualText);
+        Assertions.assertEquals(TradingPage.expectedHeaderText, TradingPage.expectedHeaderText,
+                "expected  "+TradingPage.expectedHeaderText+"   actual    "+TradingPage.expectedHeaderText);
         System.out.println("Assertions passed");
     }
 
