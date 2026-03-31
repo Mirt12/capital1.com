@@ -14,10 +14,21 @@ public class DriverSingleton {
 
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
+            // Режим работы
             options.addArguments("--headless=new");
+
+            // Стабильность в контейнерах (CI/CD)
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+
+            // Параметры окна для скриншотов
             options.addArguments("--window-size=1920,1080");
-            options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
-            options.addArguments("--disable-cache", "--incognito", "--remote-allow-origins=*");
+
+            // Игнорирование проблем с сертификатами (если тестовый стенд self-signed)
+            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--remote-allow-origins=*");
+
             driver = new ChromeDriver(options);
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
