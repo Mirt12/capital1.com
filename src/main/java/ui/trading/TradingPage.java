@@ -73,6 +73,14 @@ public class TradingPage {
             }
         });
         btn.click();
+
+        try {
+            // Ждем 1 секунду, чтобы модалка и ее overlay полностью исчезли
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         return this;
     }
 
