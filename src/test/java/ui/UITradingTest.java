@@ -15,10 +15,15 @@ public class UITradingTest extends BaseTest {
 
     @Test
     public void userCanOpenTradingPage() throws UnsupportedEncodingException, InterruptedException {
+        System.out.println("start");
         TradingPageSteps steps = new TradingPageSteps();
+        System.out.println("browser started");
         steps.openTradingPage();
+        System.out.println("openTradingPage");
         String actualText = LoadHelper.getTextByLocator(TradingPage.pageHeaderLocator);
+        System.out.println("getTextByLocator");
         Assertions.assertEquals(TradingPage.expectedHeaderText, actualText);
+        System.out.println("Assertions passed");
     }
 
     @Test
