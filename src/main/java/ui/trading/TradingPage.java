@@ -27,7 +27,7 @@ public class TradingPage {
     public static final String emailInputLocator = "//input[@aria-label='email']";
     public static final String passwordInputLocator = "//input[@aria-label='password']";
     public static final String submitLoginBtnLocator = "//button[@type='submit']";
-    public static final String loginGreetingsLocator = "//trade-topbar//div[@class=\"col market\"]";
+    public static final String loginGreetingsLocator = "//trade-topbar//div[@class=\"col market\"]/div";
     public static final String loginGreetingsText = "Market";
     public static final String capitalLogoLocator = "//a[@class='logo direction-ltr logo--capital']";
     public static final String tradingLinkLocator = "//a[@class='js-analyticsClick AMZV' and contains(text(),'Trading')]";

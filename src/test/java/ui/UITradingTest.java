@@ -2,8 +2,10 @@ package ui;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 import ui.basetests.BaseTest;
+import ui.basetests.ScreenshotExtension;
 import ui.steps.AutorizedSteps;
 import ui.steps.TradingPageSteps;
 import ui.trading.TradingPage;
@@ -11,6 +13,7 @@ import ui.utils.LoadHelper;
 
 import java.io.UnsupportedEncodingException;
 
+@ExtendWith(ScreenshotExtension.class)
 public class UITradingTest extends BaseTest {
 
     @Test

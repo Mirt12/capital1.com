@@ -15,6 +15,7 @@ public class DriverSingleton {
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless=new");
+            options.addArguments("--window-size=1920,1080");
             options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
             options.addArguments("--disable-cache", "--incognito", "--remote-allow-origins=*");
             driver = new ChromeDriver(options);
