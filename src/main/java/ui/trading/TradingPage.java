@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Wait;
 import ui.driver.DriverSingleton;
+import ui.utils.LoadHelper;
 
 import java.util.function.Function;
 
@@ -147,6 +148,14 @@ public class TradingPage {
         btn.click();
         return this;
     }
+
+    public TradingPage clickAccountBtn(Wait wait) {
+        WebElement btn = LoadHelper.getElementByLocator(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner);
+        btn.click();
+        return this;
+    }
+
+
 
 
 }

@@ -50,7 +50,11 @@ public class UITradingTest extends BaseTest {
     public void createAccountBtnOnWaysTradeBannerWorks() throws UnsupportedEncodingException, InterruptedException {
         TradingPageSteps steps = new TradingPageSteps();
         steps.openTradingPage();
-        steps.driver.findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner)).click();
+        steps.clickBtn();
+
+//        steps.driver
+//                .findElement(By.xpath(TradingPage.createAccountBtnLocatorOfWaysToTradeBanner))
+//                .click();
         String actualText = LoadHelper.getTextByLocator(TradingPage.signUpHeaderLocator);
         Assertions.assertEquals(TradingPage.expectedTextOfsignUpHeader, actualText);
     }

@@ -30,4 +30,15 @@ public class LoadHelper {
         });
         return actualTextElement.getText();
     }
+
+    public static WebElement getElementByLocator(final String locator) {
+        Wait<WebDriver> wait = LoadHelper.wait10seconds();
+        WebElement element = (WebElement) wait.until(new Function<WebDriver, WebElement>() {
+            @Override
+            public WebElement apply(WebDriver driver) {
+                return driver.findElement(By.xpath(locator));
+            }
+        });
+        return element;
+    }
 }

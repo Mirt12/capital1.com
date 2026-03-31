@@ -26,12 +26,18 @@ public class TradingPageSteps {
     public TradingPageSteps() {
         this.driver = DriverSingleton.getDriver();
     }
-
+    //todo return this
     public void openTradingPage() {
         TradingPage page = new TradingPage();
         Wait<WebDriver> wait = LoadHelper.wait10seconds();
         page.getTradingURL()
                 .closeCookieModal(wait);
+    }
+
+    public void clickBtn() {
+        TradingPage page = new TradingPage();
+        Wait<WebDriver> wait = LoadHelper.wait10seconds();
+        page.clickAccountBtn(wait);
     }
 
     public void openWebPlatform() {
